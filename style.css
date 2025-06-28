@@ -25,7 +25,7 @@ body {
   }
   
   header h1 {
-    color: #00ffd5;
+    color: #805c7d;
     font-size: 1.6rem;
     margin: 0;
   }
@@ -39,7 +39,7 @@ body {
   }
   
   nav a:hover {
-    color: #00ffd5;
+    color: #805c7d;
   }
   
   .hero {
@@ -99,7 +99,7 @@ body {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 3rem;
-    color: #00ffd5;
+    color: #805c7d;
   }
   
   .cards {
