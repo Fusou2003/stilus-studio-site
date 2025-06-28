@@ -76,18 +76,18 @@ body {
   }
   
   .btn {
-    background: #00ffd5;
-    color: #000;
-    padding: 0.8rem 1.8rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
-  }
-  
-  .btn:hover {
-    background: #00c8aa;
-  }
+  background: #805c7d;
+  color: #fff;
+  padding: 0.8rem 1.8rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #6b4a67; /* un mauve un peu plus foncé pour l'effet hover */
+}
   
   .section {
     max-width: 1200px;
