@@ -3,128 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Stilus Studio - Impression 3D & Services</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
-    }
-    header {
-      background-color: #1c1c1c;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header h1 {
-      margin: 0;
-      color: #00ffd5;
-      font-size: 1.8rem;
-    }
-    nav a {
-      color: #f0f0f0;
-      text-decoration: none;
-      margin-left: 1.5rem;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #00ffd5;
-    }
-    .hero {
-      text-align: center;
-      padding: 8rem 2rem;
-      background: linear-gradient(135deg, #000 0%, #222 100%);
-    }
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: #ccc;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .services {
-      padding: 4rem 2rem;
-      display: grid;
-      gap: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .service {
-      background-color: #1f1f1f;
-      border-radius: 8px;
-      padding: 2rem;
-      text-align: center;
-      transition: transform 0.3s;
-    }
-    .service:hover {
-      transform: translateY(-5px);
-    }
-    .service h3 {
-      color: #00ffd5;
-      margin-bottom: 1rem;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background-color: #1c1c1c;
-      color: #888;
-      font-size: 0.9rem;
-    }
-    .btn-contact {
-      display: inline-block;
-      background-color: #00ffd5;
-      color: #000;
-      padding: 0.8rem 1.5rem;
-      text-decoration: none;
-      border-radius: 4px;
-      margin-top: 2rem;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .btn-contact:hover {
-      background-color: #00c8aa;
-    }
-  </style>
+  <title>Stilus Studio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header>
-    <h1>Stilus Studio</h1>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="container">
+      <h1>Stilus Studio</h1>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <section class="hero">
-    <h2>Transformez vos idées en réalité</h2>
-    <p>Impression 3D, modélisation, prototypage : Stilus Studio vous accompagne pour concrétiser vos projets, avec précision et créativité.</p>
-    <a href="#contact" class="btn-contact">Demander un devis</a>
-  </section>
-
-  <section id="services" class="services">
-    <div class="service">
-      <h3>Impression 3D</h3>
-      <p>Production de pièces uniques ou petites séries en PLA, ABS, résine, et plus.</p>
-    </div>
-    <div class="service">
-      <h3>Modélisation 3D</h3>
-      <p>Conception de vos objets en fichiers 3D prêts pour l’impression.</p>
-    </div>
-    <div class="service">
-      <h3>Prototypage rapide</h3>
-      <p>Validation de vos concepts avec des prototypes précis et fonctionnels.</p>
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h2>Transformez vos idées en réalité</h2>
+      <p>Impression 3D, prototypage & modélisation avec précision et créativité.</p>
+      <a href="#contact" class="btn">Demander un devis</a>
     </div>
   </section>
 
-  <footer id="contact">
-    <p>Contactez-nous : <a href="mailto:contact@stilus-studio.be" style="color:#00ffd5;">contact@stilus-studio.be</a></p>
+  <section id="services" class="section">
+    <h3>Nos Services</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>Impression 3D</h4>
+        <p>Des pièces sur mesure en PLA, ABS ou résine.</p>
+      </div>
+      <div class="card">
+        <h4>Modélisation</h4>
+        <p>Des modèles 3D précis pour vos besoins.</p>
+      </div>
+      <div class="card">
+        <h4>Prototypage</h4>
+        <p>Concrétisez vos concepts rapidement.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="section">
+    <h3>Portfolio</h3>
+    <div class="portfolio-grid">
+      <div class="portfolio-item"></div>
+      <div class="portfolio-item"></div>
+      <div class="portfolio-item"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h3>Contact</h3>
+    <p>Email : <a href="mailto:contact@stilus-studio.be">contact@stilus-studio.be</a></p>
+  </section>
+
+  <footer>
     <p>&copy; 2024 Stilus Studio. Tous droits réservés.</p>
   </footer>
 
