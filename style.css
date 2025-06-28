@@ -25,7 +25,7 @@ body {
   }
   
   header h1 {
-    color: #805c7d;
+    color: #b784b3;
     font-size: 1.6rem;
     margin: 0;
   }
@@ -39,7 +39,7 @@ body {
   }
   
   nav a:hover {
-    color: #805c7d;
+    color: #b784b3;
   }
   
   .hero {
