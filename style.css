@@ -76,7 +76,7 @@ body {
   }
   
   .btn {
-  background: #805c7d;
+  background: #b784b3;
   color: #fff;
   padding: 0.8rem 1.8rem;
   border-radius: 5px;
@@ -86,7 +86,7 @@ body {
 }
 
 .btn:hover {
-  background: #6b4a67; /* un mauve un peu plus foncé pour l'effet hover */
+  background: #a06ca0; /* un mauve un peu plus foncé pour l'effet hover */
 }
   
   .section {
