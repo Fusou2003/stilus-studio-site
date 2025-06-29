@@ -142,3 +142,39 @@ body {
     font-size: 0.9rem;
   }
   
+  .library-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.library-item {
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.library-item:hover {
+  transform: translateY(-5px);
+}
+
+.library-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.library-item h4 {
+  color: #b784b3; /* ta couleur mauve harmonisée */
+  margin-bottom: 0.5rem;
+}
+
+.library-item p {
+  color: #ccc;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
