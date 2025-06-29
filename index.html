@@ -6,6 +6,8 @@
   <link rel="icon" href="logo.png" type="image/png">
   <title>Stilus Studio</title>
   <link rel="stylesheet" href="style.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
 </head>
 <body>
 
@@ -61,27 +63,27 @@
   
   <section id="library" class="section">
   <h3>Library</h3>
-  <div class="library-item">
-    <div class="sketchfab-embed-wrapper">
-      <iframe title="Moon" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
-        allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share
-        src="https://sketchfab.com/models/282c13d3de0f401bb9f9cc33930f53e5/embed" width="100%" height="300">
-      </iframe>
-    </div>
-    <h4>Moon</h4>
-    <p>Lampe en forme de lune interactive en 3D</p>
-    <a href="mailto:contact@stilus-studio.be?subject=Commande%20Moon" class="btn">Acheter</a>
-  </div>
+  <div class="library-grid">
 
     <div class="library-item">
-      <img src="images/objet2.jpg" alt="Objet 2">
-      <h4>Objet 2</h4>
-      <p>Autre description, matériau, etc.</p>
-      <a href="mailto:contact@stilus-studio.be?subject=Commande%20Objet%202" class="btn">Acheter</a>
+      <model-viewer
+        src="images/moon.glb"
+        alt="Mon modèle 3D"
+        auto-rotate
+        camera-controls
+        background-color="#000000"
+        style="width: 100%; height: 400px;">
+      </model-viewer>
+      <h4>Mon modèle interactif</h4>
+      <p>Description de ton objet, matériaux, dimensions…</p>
+      <a href="mailto:contact@stilus-studio.be?subject=Commande%20Mon%20Mod%C3%A8le" class="btn">Acheter</a>
     </div>
-    <!-- Ajoute autant d'objets que tu veux -->
+
+    <!-- Ajoute d’autres library-item ici si tu veux -->
+
   </div>
 </section>
+
 
   <section id="contact" class="section">
     <h3>Contact</h3>
