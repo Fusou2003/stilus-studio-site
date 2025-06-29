@@ -7,9 +7,15 @@
   <title>Stilus Studio</title>
   <link rel="stylesheet" href="style.css" />
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 
 </head>
 <body>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
   <header>
     <div class="container">
@@ -50,7 +56,7 @@
     </div>
   </section>
   
-  <section id="library" class="section">
+  <section id="library" class="section" data-aos="fade-up">
   <h3>Library</h3>
   <div class="library-grid">
 
@@ -75,7 +81,7 @@
   </div>
   </section>
 
-  <section id="portfolio" class="section">
+  <section id="portfolio" class="section" data-aos="fade-left">
     <h3>Portfolio</h3>
     <div class="portfolio-grid">
       <div class="portfolio-item"></div>
