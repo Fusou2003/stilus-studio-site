@@ -49,9 +49,13 @@ function updateCartDisplay() {
   const cartItems = document.getElementById('cart-items');
   cartItems.innerHTML = '';
   cart.forEach((item, index) => {
+    const quantityDisplay = item.quantity >= 10 
+      ? '<span style="color:red;font-weight:bold;">Max</span>' 
+      : `x${item.quantity}`;
+    
     cartItems.innerHTML += `
       <li>
-        ${item.title} x${item.quantity} 
+        ${item.title} ${quantityDisplay} 
         <button onclick="decreaseQuantity(${index})" class="cart-btn">-</button>
         <button onclick="increaseQuantity(${index})" class="cart-btn">+</button>
       </li>
@@ -60,20 +64,33 @@ function updateCartDisplay() {
 }
 
 
+
 function addToCart(obj, quantity) {
   const existing = cart.find(item => item.id === obj.id);
   if (existing) {
-    existing.quantity += quantity;
+    if (existing.quantity + quantity > 10) {
+      existing.quantity = 10; // plafonne à 10
+      alert("Vous ne pouvez pas ajouter plus de 10 exemplaires de ce produit.");
+    } else {
+      existing.quantity += quantity;
+    }
   } else {
+    if (quantity > 10) quantity = 10;
     cart.push({...obj, quantity});
   }
   updateCartDisplay();
 }
 
+
 function increaseQuantity(index) {
-  cart[index].quantity++;
+  if (cart[index].quantity < 10) {
+    cart[index].quantity++;
+  } else {
+    alert("Vous ne pouvez pas ajouter plus de 10 exemplaires de cet article.");
+  }
   updateCartDisplay();
 }
+
 
 function decreaseQuantity(index) {
   cart[index].quantity--;
