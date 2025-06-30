@@ -1,26 +1,27 @@
 // Tableau de tes objets 3D
 const objects = [
   {
+    id: 1,
     file: "moon.glb",
     title: "Lampe Lune",
-    description: "Lampe en forme de Lune."
+    description: "Lampe en forme de Lune interactive en 3D."
   },
   {
+    id: 2,
     file: "croix.glb",
     title: "Croix",
-    description: "Croix"
+    description: "Croix 3D stylisée."
   },
   {
+    id: 3,
     file: "georgia.glb",
     title: "Georgia",
-    description: "Georgia"
+    description: "Modèle Georgia en 3D."
   }
 ];
 
-// Sélectionne la grille où ajouter les objets
 const container = document.querySelector('.library-grid');
 
-// Boucle pour générer le HTML pour chaque objet
 objects.forEach(obj => {
   container.innerHTML += `
     <div class="library-item">
@@ -34,9 +35,44 @@ objects.forEach(obj => {
         environment-image="neutral"
         style="width: 100%; height: 400px;">
       </model-viewer>
-      <h4>${obj.title}</h4>
+      <h4>Objet ${obj.id} : ${obj.title}</h4>
       <p>${obj.description}</p>
-      <a href="mailto:contact@stilus-studio.be?subject=Commande%20${encodeURIComponent(obj.title)}" class="btn">Acheter</a>
+      <button onclick='addToCart(${JSON.stringify(obj)}, 1)' class="btn">Add</button>
     </div>
   `;
+});
+
+
+const cart = [];
+
+function updateCartDisplay() {
+  const cartItems = document.getElementById('cart-items');
+  cartItems.innerHTML = '';
+  cart.forEach(item => {
+    cartItems.innerHTML += `<li>${item.title} x${item.quantity}</li>`;
+  });
+}
+
+function addToCart(obj, quantity) {
+  const existing = cart.find(item => item.id === obj.id);
+  if (existing) {
+    existing.quantity += quantity;
+  } else {
+    cart.push({...obj, quantity});
+  }
+  updateCartDisplay();
+}
+
+document.getElementById('checkout-btn').addEventListener('click', () => {
+  if (cart.length === 0) {
+    alert("Votre panier est vide !");
+    return;
+  }
+  let body = "Bonjour,\n\nJe souhaite commander les objets suivants :\n";
+  cart.forEach(item => {
+    body += `- ID ${item.id} : ${item.title} (x${item.quantity})\n`;
+  });
+  body += "\nMerci de me confirmer la disponibilité et le prix.\n\nCordialement,";
+
+  window.location.href = `mailto:contact@stilus-studio.be?subject=Nouvelle commande&body=${encodeURIComponent(body)}`;
 });
