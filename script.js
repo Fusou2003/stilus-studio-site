@@ -6,12 +6,12 @@ const objects = [
     description: "Lampe en forme de Lune."
   },
   {
-    file: "Croix.glb",
+    file: "croix.glb",
     title: "Croix",
     description: "Croix"
   },
   {
-    file: "Georgia.glb",
+    file: "georgia.glb",
     title: "Georgia",
     description: "Georgia"
   }
