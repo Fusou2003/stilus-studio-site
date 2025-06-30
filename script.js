@@ -48,8 +48,14 @@ const cart = [];
 function updateCartDisplay() {
   const cartItems = document.getElementById('cart-items');
   cartItems.innerHTML = '';
-  cart.forEach(item => {
-    cartItems.innerHTML += `<li>${item.title} x${item.quantity}</li>`;
+  cart.forEach((item, index) => {
+    cartItems.innerHTML += `
+      <li>
+        ${item.title} x${item.quantity} 
+        <button onclick="decreaseQuantity(${index})" style="margin-left:5px;">-</button>
+        <button onclick="increaseQuantity(${index})" style="margin-left:2px;">+</button>
+      </li>
+    `;
   });
 }
 
@@ -59,6 +65,19 @@ function addToCart(obj, quantity) {
     existing.quantity += quantity;
   } else {
     cart.push({...obj, quantity});
+  }
+  updateCartDisplay();
+}
+
+function increaseQuantity(index) {
+  cart[index].quantity++;
+  updateCartDisplay();
+}
+
+function decreaseQuantity(index) {
+  cart[index].quantity--;
+  if (cart[index].quantity <= 0) {
+    cart.splice(index, 1);
   }
   updateCartDisplay();
 }
@@ -76,3 +95,4 @@ document.getElementById('checkout-btn').addEventListener('click', () => {
 
   window.location.href = `mailto:contact@stilus-studio.be?subject=Nouvelle commande&body=${encodeURIComponent(body)}`;
 });
+
