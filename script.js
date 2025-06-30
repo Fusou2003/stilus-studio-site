@@ -52,12 +52,13 @@ function updateCartDisplay() {
     cartItems.innerHTML += `
       <li>
         ${item.title} x${item.quantity} 
-        <button onclick="decreaseQuantity(${index})" style="margin-left:5px;">-</button>
-        <button onclick="increaseQuantity(${index})" style="margin-left:2px;">+</button>
+        <button onclick="decreaseQuantity(${index})" class="cart-btn">-</button>
+        <button onclick="increaseQuantity(${index})" class="cart-btn">+</button>
       </li>
     `;
   });
 }
+
 
 function addToCart(obj, quantity) {
   const existing = cart.find(item => item.id === obj.id);

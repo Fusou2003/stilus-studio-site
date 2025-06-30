@@ -178,3 +178,17 @@ body {
   font-size: 1rem;
   margin-bottom: 1rem;
 }
+
+.cart-btn {
+  background: none;
+  border: none;
+  color: #b784b3;  /* mauve futur */
+  font-size: 1.4rem;
+  cursor: pointer;
+  margin-left: 5px;
+  padding: 0;
+}
+
+.cart-btn:focus {
+  outline: none;
+}
