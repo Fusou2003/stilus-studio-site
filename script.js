@@ -83,17 +83,20 @@ function decreaseQuantity(index) {
   updateCartDisplay();
 }
 
-document.getElementById('checkout-btn').addEventListener('click', () => {
-  if (cart.length === 0) {
-    alert("Votre panier est vide !");
-    return;
-  }
-  let body = "Bonjour,\n\nJe souhaite commander les objets suivants :\n";
-  cart.forEach(item => {
-    body += `- ID ${item.id} : ${item.title} (x${item.quantity})\n`;
-  });
-  body += "\nMerci de me confirmer la disponibilité et le prix.\n\nCordialement,";
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('checkout-btn').addEventListener('click', () => {
+    if (cart.length === 0) {
+      alert("Votre panier est vide !");
+      return;
+    }
+    let body = "Bonjour,\n\nJe souhaite commander les objets suivants :\n";
+    cart.forEach(item => {
+      body += `- ID ${item.id} : ${item.title} (x${item.quantity})\n`;
+    });
+    body += "\nMerci de me confirmer la disponibilité et le prix.\n\nCordialement,";
 
-  window.location.href = `mailto:contact@stilus-studio.be?subject=Nouvelle commande&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:contact@stilus-studio.be?subject=Nouvelle commande&body=${encodeURIComponent(body)}`;
+  });
 });
+
 
