@@ -192,3 +192,7 @@ body {
 .cart-btn:focus {
   outline: none;
 }
+
+#cart h4 {
+  text-align: center;
+}
