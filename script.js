@@ -49,10 +49,10 @@ function updateCartDisplay() {
   const cartItems = document.getElementById('cart-items');
   cartItems.innerHTML = '';
   cart.forEach((item, index) => {
-    const quantityDisplay = item.quantity >= 10 
-      ? '<span style="color:red;font-weight:bold;">Max</span>' 
-      : `x${item.quantity}`;
-    
+    let quantityDisplay = `x${item.quantity}`;
+    if (item.quantity >= 10) {
+      quantityDisplay += ' <span style="color:red;font-weight:bold;">Max</span>';
+    }
     cartItems.innerHTML += `
       <li>
         ${item.title} ${quantityDisplay} 
@@ -62,6 +62,7 @@ function updateCartDisplay() {
     `;
   });
 }
+
 
 
 
